@@ -1,0 +1,45 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- Lifelines -->
+    <mxCell id="2" value="Client" style="shape=mxgraph.sequence.actor;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="70" height="50" as="geometry" /></mxCell>
+    <mxCell id="3" value="" style="endArrow=none;dashed=1;strokeColor=#6c8ebf;" edge="1" parent="1" source="2"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="75" y="520"/></Array></mxGeometry></mxCell>
+
+    <mxCell id="4" value="TaskController" style="shape=mxgraph.sequence.lifeline;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="150" y="40" width="100" height="50" as="geometry" /></mxCell>
+    <mxCell id="5" value="" style="endArrow=none;dashed=1;strokeColor=#82b366;" edge="1" parent="1" source="4"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="200" y="520"/></Array></mxGeometry></mxCell>
+
+    <mxCell id="6" value="TaskService" style="shape=mxgraph.sequence.lifeline;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="290" y="40" width="100" height="50" as="geometry" /></mxCell>
+    <mxCell id="7" value="" style="endArrow=none;dashed=1;strokeColor=#d6b656;" edge="1" parent="1" source="6"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="340" y="520"/></Array></mxGeometry></mxCell>
+
+    <mxCell id="8" value="EventPublisher" style="shape=mxgraph.sequence.lifeline;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="420" y="40" width="100" height="50" as="geometry" /></mxCell>
+    <mxCell id="9" value="" style="endArrow=none;dashed=1;strokeColor=#9673a6;" edge="1" parent="1" source="8"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="470" y="520"/></Array></mxGeometry></mxCell>
+
+    <mxCell id="10" value="Notification&#xa;Processor" style="shape=mxgraph.sequence.lifeline;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="550" y="40" width="100" height="50" as="geometry" /></mxCell>
+    <mxCell id="11" value="" style="endArrow=none;dashed=1;strokeColor=#d79b00;" edge="1" parent="1" source="10"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="600" y="520"/></Array></mxGeometry></mxCell>
+
+    <mxCell id="12" value="Audit&#xa;Processor" style="shape=mxgraph.sequence.lifeline;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="680" y="40" width="100" height="50" as="geometry" /></mxCell>
+    <mxCell id="13" value="" style="endArrow=none;dashed=1;strokeColor=#b85450;" edge="1" parent="1" source="12"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="730" y="520"/></Array></mxGeometry></mxCell>
+
+    <!-- Messages -->
+    <mxCell id="14" value="POST /tasks/{id}/assign/{workerId} + Bearer token" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=1;strokeColor=#6c8ebf;fontSize=11;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="75" y="130" as="sourcePoint"/><mxPoint x="200" y="130" as="targetPoint"/></mxGeometry></mxCell>
+    <mxCell id="15" value="JWT filter + @PreAuthorize MANAGER" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=1;strokeColor=#82b366;fontSize=11;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="200" y="160" as="sourcePoint"/><mxPoint x="340" y="160" as="targetPoint"/></mxGeometry></mxCell>
+    <mxCell id="16" value="403 Forbidden (not a manager)" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=1;strokeColor=#b85450;dashed=1;fontSize=11;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="340" y="180" as="sourcePoint"/><mxPoint x="75" y="180" as="targetPoint"/></mxGeometry></mxCell>
+    <mxCell id="17" value="validate task + worker exist" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#d6b656;fontSize=11;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="340" y="210" as="sourcePoint"/><mxPoint x="340" y="210" as="targetPoint"><Array as="points"><mxPoint x="400" y="210"/><mxPoint x="400" y="230"/><mxPoint x="340" y="230"/></Array></mxGeometry></mxCell>
+    <mxCell id="18" value="save task assignment" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#d6b656;fontSize=11;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="340" y="260" as="sourcePoint"/><mxPoint x="340" y="260" as="targetPoint"><Array as="points"><mxPoint x="400" y="260"/><mxPoint x="400" y="280"/><mxPoint x="340" y="280"/></Array></mxGeometry></mxCell>
+    <mxCell id="19" value="publishTaskAssigned(task)" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=1;strokeColor=#9673a6;fontSize=11;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="340" y="310" as="sourcePoint"/><mxPoint x="470" y="310" as="targetPoint"/></mxGeometry></mxCell>
+    <mxCell id="20" value="fires TaskAssignedEvent" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#9673a6;fontSize=11;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="470" y="330" as="sourcePoint"/><mxPoint x="470" y="330" as="targetPoint"><Array as="points"><mxPoint x="530" y="330"/><mxPoint x="530" y="350"/><mxPoint x="470" y="350"/></Array></mxGeometry></mxCell>
+
+    <!-- Async to processors -->
+    <mxCell id="21" value="@EventListener (async)" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=1;strokeColor=#d79b00;dashed=1;fontSize=11;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="470" y="380" as="sourcePoint"/><mxPoint x="600" y="380" as="targetPoint"/></mxGeometry></mxCell>
+    <mxCell id="22" value="send notification → publishes notification.sent" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#d79b00;fontSize=11;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="600" y="400" as="sourcePoint"/><mxPoint x="600" y="400" as="targetPoint"><Array as="points"><mxPoint x="660" y="400"/><mxPoint x="660" y="420"/><mxPoint x="600" y="420"/></Array></mxGeometry></mxCell>
+
+    <mxCell id="23" value="@EventListener (async)" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=1;strokeColor=#b85450;dashed=1;fontSize=11;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="470" y="450" as="sourcePoint"/><mxPoint x="730" y="450" as="targetPoint"/></mxGeometry></mxCell>
+    <mxCell id="24" value="save audit log → publishes audit.saved" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#b85450;fontSize=11;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="730" y="465" as="sourcePoint"/><mxPoint x="730" y="465" as="targetPoint"><Array as="points"><mxPoint x="790" y="465"/><mxPoint x="790" y="480"/><mxPoint x="730" y="480"/></Array></mxGeometry></mxCell>
+
+    <!-- Response -->
+    <mxCell id="25" value="201 Created {task assigned}" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=1;strokeColor=#82b366;dashed=1;fontSize=11;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="340" y="510" as="sourcePoint"/><mxPoint x="75" y="510" as="targetPoint"/></mxGeometry></mxCell>
+
+  </root>
+</mxGraphModel>

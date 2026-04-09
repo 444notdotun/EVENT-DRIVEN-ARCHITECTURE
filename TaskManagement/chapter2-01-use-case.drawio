@@ -1,0 +1,100 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram id="eX10u2huSl1qmF8gVpM6" name="Page-1">
+    <mxGraphModel dx="454" dy="344" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Task Management Platform" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.flowchart.start_2;dashed=1;dashPattern=6 3;fontSize=14;fontStyle=1;verticalLabelPosition=top;verticalAlign=bottom;" parent="1" vertex="1">
+          <mxGeometry x="180" y="60" width="500" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Manager" style="shape=mxgraph.flowchart.actor;fontSize=13;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="40" y="100" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Worker" style="shape=mxgraph.flowchart.actor;fontSize=13;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="740" y="100" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="System" style="shape=mxgraph.flowchart.actor;fontSize=13;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="740" y="380" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Register / Login" style="ellipse;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="200" y="90" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Create project" style="ellipse;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="200" y="154" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Create task" style="ellipse;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="200" y="214" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Assign task to worker" style="ellipse;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="200" y="274" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="View all projects / tasks" style="ellipse;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="200" y="334" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="View assigned tasks" style="ellipse;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="490" y="154" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Update task status" style="ellipse;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="490" y="214" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Receive notification" style="ellipse;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="490" y="274" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Receive email" style="ellipse;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="490" y="334" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Log audit entry" style="ellipse;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="490" y="394" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="fires task.assigned event" style="ellipse;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="310" y="460" width="200" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="3" target="6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="3" target="7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="3" target="8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="3" target="9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="3" target="10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="4" target="6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="4" target="11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="4" target="12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="4" target="13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="4" target="14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="5" target="15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="triggers" style="edgeStyle=orthogonalEdgeStyle;dashed=1;" parent="1" source="9" target="16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="triggers" style="edgeStyle=orthogonalEdgeStyle;dashed=1;" parent="1" source="16" target="13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="triggers" style="edgeStyle=orthogonalEdgeStyle;dashed=1;" parent="1" source="16" target="14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="triggers" style="edgeStyle=orthogonalEdgeStyle;dashed=1;" parent="1" source="16" target="15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

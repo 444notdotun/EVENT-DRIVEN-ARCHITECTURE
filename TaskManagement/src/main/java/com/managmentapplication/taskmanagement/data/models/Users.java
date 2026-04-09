@@ -2,6 +2,7 @@ package com.managmentapplication.taskmanagement.data.models;
 
 import com.managmentapplication.taskmanagement.utils.Generator;
 import com.managmentapplication.taskmanagement.utils.GeneratorType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
@@ -18,6 +19,7 @@ import java.util.List;
 public class Users  implements UserDetails {
     @Id
     private String userId;
+    @Column(unique = true)
     private String username;
     private String password;
     private String firstNAme;

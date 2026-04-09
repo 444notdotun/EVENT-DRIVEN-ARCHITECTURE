@@ -32,7 +32,7 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public CreateTaskResponse createTask(CreateTaskRequest createTask, String projectId, String username) {
-        return taskService.createTask(projectId, username, createTask);
+    public CreateTaskResponse createTask(CreateTaskRequest createTask, String projectId) {
+        return taskService.createTask(projectId, createTask);
     }
 }

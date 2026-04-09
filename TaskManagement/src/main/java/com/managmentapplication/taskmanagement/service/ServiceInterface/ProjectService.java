@@ -8,5 +8,5 @@ import com.managmentapplication.taskmanagement.dtos.response.CreateTaskResponse;
 public interface ProjectService {
     CreateProjectServiceResponse createProject(CreateProjectRequest createProjectRequest, String username);
 
-    CreateTaskResponse createTask(CreateTaskRequest createTask, String projectId, String username);
+    CreateTaskResponse createTask(CreateTaskRequest createTask, String projectId);
 }

@@ -68,7 +68,7 @@ class ProjectTest {
         assertEquals(createProjectServiceResponse.getProjectName(),createProjectRequest.getProjectName());
         assertEquals(createProjectServiceResponse.getUsers(),authResponse.getUserId());
         projectId=createProjectServiceResponse.getProjectId();
-        CreateTaskResponse createTaskResponse = projectService.createTask(createTaskRequest,projectId,username);
+        CreateTaskResponse createTaskResponse = projectService.createTask(createTaskRequest,projectId);
         assertNotNull(createTaskResponse);
         assertEquals(createTaskResponse.getTaskName(), createTaskRequest.getTaskName());
     }

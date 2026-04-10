@@ -16,5 +16,6 @@ public class TaskEventListner {
     public void taskAssignedEvent(TaskAssignedEvent taskAssignedEvent) {
         notificationService.sendNotification(taskAssignedEvent);
 
+
     }
 }

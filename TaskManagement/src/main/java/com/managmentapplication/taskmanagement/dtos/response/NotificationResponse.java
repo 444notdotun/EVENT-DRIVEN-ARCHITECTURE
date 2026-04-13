@@ -5,9 +5,7 @@ import lombok.Data;
 
 @Data
 public class NotificationResponse {
-    private String TaskName;
-    private String TaskDescription;
-    private TaskStatus taskStatus;
-    private String userId;
-    private String projectName;
+    private String sendTo;
+    private String subject;
+    private String body;
 }

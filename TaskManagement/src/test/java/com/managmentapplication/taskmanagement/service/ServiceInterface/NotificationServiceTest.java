@@ -24,7 +24,7 @@ class NotificationServiceTest {
         taskAssignedEvent.setTaskName("Implement Login Feature");
         taskAssignedEvent.setTaskDescription("Create authentication using JWT");
         taskAssignedEvent.setTaskStatus(TaskStatus.IN_PROGRESS);
-        taskAssignedEvent.setUserId("user123");
+        taskAssignedEvent.setUserName("user123");
         taskAssignedEvent.setProjectName("Task Management System");
         NotificationResponse notificationRespnse = notificationService.sendNotification(taskAssignedEvent);
         assertNotNull(notificationRespnse);

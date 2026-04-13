@@ -1,12 +1,10 @@
 package com.managmentapplication.taskmanagement.utils;
-import com.managmentapplication.taskmanagement.data.models.Notification;
-import com.managmentapplication.taskmanagement.data.models.Project;
-import com.managmentapplication.taskmanagement.data.models.Task;
-import com.managmentapplication.taskmanagement.data.models.Users;
+import com.managmentapplication.taskmanagement.data.models.*;
 import com.managmentapplication.taskmanagement.dtos.request.CreateProjectRequest;
 import com.managmentapplication.taskmanagement.dtos.request.CreateTaskRequest;
 import com.managmentapplication.taskmanagement.dtos.request.RegisterUserRequest;
 import com.managmentapplication.taskmanagement.dtos.response.*;
+import com.managmentapplication.taskmanagement.events.eventModels.RegisterUserEvent;
 import com.managmentapplication.taskmanagement.events.eventModels.TaskAssignedEvent;
 import com.managmentapplication.taskmanagement.service.ServiceInterface.JwtService;
 
@@ -78,7 +76,7 @@ public class Mapper {
         taskAssignedEvent.setTaskDescription(task.getTaskDescription());
         taskAssignedEvent.setTaskName(task.getTaskName());
         taskAssignedEvent.setTaskStatus(task.getTaskStatus());
-        taskAssignedEvent.setUserId(users.getUsername());
+        taskAssignedEvent.setUserName(users.getUsername());
         taskAssignedEvent.setProjectName(project.getProjectName());
         return  taskAssignedEvent;
     }
@@ -97,22 +95,36 @@ public class Mapper {
 
     public static Notification mapNotification(TaskAssignedEvent taskAssignedEvent) {
         Notification notification  = new Notification();
-        notification.setProjectName(taskAssignedEvent.getProjectName());
-        notification.setTaskStatus(taskAssignedEvent.getTaskStatus());
-        notification.setTaskDescription(taskAssignedEvent.getTaskDescription());
-        notification.setUserId(taskAssignedEvent.getUserId());
-        notification.setProjectName(taskAssignedEvent.getProjectName());
-        notification.setTaskName(taskAssignedEvent.getTaskName());
+        notification.setBody(
+                "Hi " + taskAssignedEvent.getUserName() + ",\n\n" +
+                        "I hope you’re doing well.\n" +
+                        "You have been assigned a new task: " + taskAssignedEvent.getTaskDescription() +
+                        ". Please review the requirements and begin work at your earliest convenience.\n\n" +
+                        "If you have any questions or require clarification on any aspect of the task, feel free to reach out. " +
+                        "Kindly provide periodic updates on your progress.\n\n" +
+                        "Thank you, and I look forward to your successful completion of this assignment.\n\n" +
+                        "Best regards,\n" +
+                        "Human Resources");
+        notification.setSubject("Task Assignment: " + taskAssignedEvent.getTaskName());
+        notification.setSendTo(taskAssignedEvent.getUserName());
         return notification;
     }
 
     public static NotificationResponse mapNotificationToNotificationResponse(Notification notification) {
         NotificationResponse  notificationResponse = new NotificationResponse();
-        notificationResponse.setProjectName(notification.getProjectName());
-        notificationResponse.setTaskStatus(notification.getTaskStatus());
-        notificationResponse.setTaskDescription(notification.getTaskDescription());
-        notificationResponse.setUserId(notification.getUserId());
-        notificationResponse.setTaskName(notification.getTaskName());
+        notificationResponse.setBody(notification.getBody());
+        notificationResponse.setSubject(notification.getSubject());
+        notificationResponse.setSendTo(notification.getSendTo());
         return notificationResponse;
     }
+
+    public static Notification mapRegisterEvent(RegisterUserEvent registerUserEvent) {
+        Notification notification = new Notification();
+        notification.setBody("Welcome to Task Management System, " + registerUserEvent.getUsername() + ". We are excited to have you on board.");
+        notification.setSubject("Welcome to Task Management System");
+        notification.setSendTo(registerUserEvent.getUsername());
+        return notification;
+    }
+
+
 }

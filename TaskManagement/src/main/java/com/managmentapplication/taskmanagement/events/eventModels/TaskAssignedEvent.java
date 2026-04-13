@@ -10,6 +10,6 @@ public class TaskAssignedEvent {
     private String TaskName;
     private String TaskDescription;
     private TaskStatus taskStatus;
-    private String userId;
+    private String userName;
     private String projectName;
 }

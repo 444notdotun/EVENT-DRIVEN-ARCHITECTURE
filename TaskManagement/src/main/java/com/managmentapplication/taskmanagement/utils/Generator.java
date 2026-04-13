@@ -11,6 +11,7 @@ public class Generator {
         idGenerators.put(GeneratorType.USER,()->"USER-"+generateId());
         idGenerators.put(GeneratorType.PROJECT,()->"PROJECT-"+generateId());
         idGenerators.put(GeneratorType.TASK,()->"TASK-"+generateId());
+        idGenerators.put(GeneratorType.EVENT,()->"EVENT-"+generateId());
     }
 
 
